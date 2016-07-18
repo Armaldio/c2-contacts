@@ -134,6 +134,13 @@ cr.plugins_.armaldio_contacts = function (runtime) {
     Exps.prototype.GetPhoneNumbers = function (ret) {
         ret.set_any(lastContact.phoneNumbers);
     };
+	
+	Exps.prototype.EmailCount = function (ret) {
+		if (lastContact.emails)
+			ret.set_float(lastContact.emails.length);
+		else
+			ret.set_float(0);
+    };
 
     pluginProto.exps = new Exps();
 

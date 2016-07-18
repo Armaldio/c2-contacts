@@ -52,7 +52,7 @@ function GetPluginSettings() {
 //				script_name);		// corresponding runtime function name
 
 //AddStringParam("Language", "The language to test", "");
-AddCondition(0, cf_trigger, "On contact picked", "Contac", "When the contact is picked", "Triggered when the contact is picked", "OnContactSelected");
+AddCondition(0, cf_trigger, "On contact picked", "Contact", "When the contact is picked", "Triggered when the contact is picked", "OnContactSelected");
 ////////////////////////////////////////
 // Actions
 
@@ -65,7 +65,7 @@ AddCondition(0, cf_trigger, "On contact picked", "Contac", "When the contact is 
 //			 script_name);		// corresponding runtime function name
 
 //AddStringParam("Data", "All the translation JSON", "");
-AddAction(0, cf_none, "Pick Contact", "Contac", "Pick a contact", "Pick a contact", "GetContact");
+AddAction(0, cf_none, "Pick Contact", "Contact", "Pick a contact", "Pick a contact", "GetContact");
 
 //AddStringParam("Language", "The language to set by default", "");
 //AddAction(1, cf_none, "Set current language", "Set", "Set language to {0}", "Set dictionnary current language", "SetLanguage");
@@ -83,11 +83,13 @@ AddAction(0, cf_none, "Pick Contact", "Contac", "Pick a contact", "Pick a contac
 
 //AddStringParam("Field", "The field you want to translate", "");
 AddNumberParam("Index", "If multiple email adress, pick the one at the index", "0");
-AddExpression(0, ef_return_any, "GetEmails", "Contact", "GetEmails", "Pick a contact from your phone");
+AddExpression(0, ef_return_any, "Get emails", "Contact", "GetEmails", "Pick a contact from your phone");
 
-AddExpression(1, ef_return_any, "GetDisplayName", "Contact", "GetDisplayName", "Pick a contact from your phone");
+AddExpression(1, ef_return_any, "Get display names", "Contact", "GetDisplayName", "Pick a contact from your phone");
 
-AddExpression(2, ef_return_any, "GetPhoneNumbers", "Contact", "GetPhoneNumbers", "Pick a contact from your phone");
+AddExpression(2, ef_return_any, "Get phone numbers", "Contact", "GetPhoneNumbers", "Pick a contact from your phone");
+
+AddExpression(3, ef_return_number, "Emails count", "Contact", "EmailCount", "Get number of emails");
 
 /*
 AddStringParam("Field", "The field you want to translate", "");
